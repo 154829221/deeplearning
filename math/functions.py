@@ -16,6 +16,7 @@ def draw(func,a,b):
     ax.set_title(name)
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
+    plt.ylim(ymin=-40,ymax=30)
     plt.show()
 
 def drawAndCompare(f1,f2,a,b):
@@ -32,6 +33,7 @@ def drawAndCompare(f1,f2,a,b):
     ax.set_title(" 蓝色："+name1+" 橘色："+name2)
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
+    plt.ylim(ymin=-30,ymax=30)
     plt.show()
 
 # x的三次方-3x
@@ -73,6 +75,26 @@ def func6(x):
     name = "lnx"
     return y,name
 
+# 1/x*sin(1/x)
+def func8(x):
+    y =1/x*np.sin(1/x)
+    # y = []
+    # for i in list(x):
+    #     if i <-5:
+    #         y.append(pow((i-1),3)/pow((i+1),2))
+    #     elif i < -1.1 and i > -5:
+    #         y.append(pow((i-1),3)/pow((i+1),2))
+    #     elif i > 1:
+    #         y.append(pow((i-1),3)/pow((i+1),2))
+    #     else:
+    #         y.append(0)
+
+    # y1 = np.array(y)
+    name = "1/x*sin(1/x)"
+    return y,name
+
+
+
 # y = np.power(x,1/3)
 def newPow(x,n):
     y = []
@@ -88,4 +110,4 @@ def newPow(x,n):
 # draw(func2,-2,2)
 # draw(func3,-2,2)
 # drawAndCompare(func4,func5,0.1,10)
-draw(func3,-10,10)
+draw(func8,0,10)
